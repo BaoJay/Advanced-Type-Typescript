@@ -21,10 +21,25 @@ type Numberic = number | boolean;
 
 type Universal = Combinable & Numberic;
 
-function add (a: Combinable, b: Combinable) {
-    if (typeof a === 'string' || typeof b === 'string') {
-        return a.toString() + b.toString();
-    } else {
-        return a + b;
+// function add (a: Combinable, b: Combinable) {
+//     if (typeof a === 'string' || typeof b === 'string') {
+//         return a.toString() + b.toString();
+//     } else {
+//         return a + b;
+//     }
+// }
+
+type UnknownEmployee = Admin | Employee;
+
+function printEmployeeInformation (emp: UnknownEmployee) {
+    console.log('Name: ', emp.name);
+    if ('privileges' in emp) {
+        console.log('Privileges: ', emp.privileges);
+    }
+    if ('startDate' in emp) {
+        console.log('Start Date: ', emp.startDate);
     }
 }
+
+printEmployeeInformation(e1);
+printEmployeeInformation({name: 'Gia', startDate: new Date(),});
