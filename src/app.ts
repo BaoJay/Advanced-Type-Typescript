@@ -20,4 +20,11 @@ type Combinable = string | number;
 type Numberic = number | boolean;
 
 type Universal = Combinable & Numberic;
-console.log(Universal)
+
+function add (a: Combinable, b: Combinable) {
+    if (typeof a === 'string' || typeof b === 'string') {
+        return a.toString() + b.toString();
+    } else {
+        return a + b;
+    }
+}
