@@ -1,25 +1,3 @@
-interface Bird {
-    type: 'bird';
-    flyingSpeed: number;
-}
+const userInputElement = document.querySelector('#user-input')! as HTMLInputElement;
 
-interface Horse {
-    type: 'horse';
-    runningSpeed: number;
-}
-
-type Animal = Bird | Horse;
-
-function useAnimal(animal: Animal) {
-    let speed;
-    switch(animal.type) {
-        case 'bird':
-            speed = animal.flyingSpeed;
-            break;
-        case 'horse':
-            speed = animal.runningSpeed;
-    }
-    return speed
-}
-
-console.log(useAnimal({type: 'bird', flyingSpeed: 5000}))
+userInputElement.value = 'Hi there!!'
